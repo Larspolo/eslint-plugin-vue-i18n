@@ -254,6 +254,13 @@ tester.run('no-missing-keys', rule as never, {
         errors: [`'missing' does not exist in localization message resources`]
       },
       {
+        // quote in key key
+        code: `$tc('missing "quote"')`,
+        errors: [
+          `'missing "quote"' does not exist in localization message resources`
+        ]
+      },
+      {
         // using <i18n> functional component in template block
         code: `<template>
       <div id="app">
